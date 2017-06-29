@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header-component></header-component>
+    <attention-popup v-if='attention'></attention-popup>
     <footer-component></footer-component>
   </div>
 </template>
@@ -8,12 +9,20 @@
 <script>
 import headerComponent from './components/header-component.vue';
 import footerComponent from './components/footer-component.vue';
+import attentionPopup from './components/attention-popup.vue';
 
 export default {
   name: 'app',
+  data () {
+    return {
+      attention: true
+    }
+  },
+
   components: {
     headerComponent,
-    footerComponent
+    footerComponent,
+    attentionPopup
   }
 }
 </script>
