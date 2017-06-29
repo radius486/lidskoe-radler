@@ -2,6 +2,10 @@
   <div id="app">
     <header-component></header-component>
     <attention-popup v-if='attention'></attention-popup>
+    <div class="views" v-else  :style='{transform: "translateY(" + offset + ")" }'>
+      <view-1></view-1>
+      <view-2></view-2>
+    </div>
     <footer-component></footer-component>
   </div>
 </template>
@@ -10,20 +14,32 @@
 import headerComponent from './components/header-component.vue';
 import footerComponent from './components/footer-component.vue';
 import attentionPopup from './components/attention-popup.vue';
+import view1 from './components/view-1.vue';
+import view2 from './components/view-2.vue';
 
 export default {
   name: 'app',
   data () {
     return {
-      attention: true
+      attention: true,
+      currentSlideNum: 1
     }
   },
 
   components: {
     headerComponent,
     footerComponent,
-    attentionPopup
+    attentionPopup,
+    view1,
+    view2
+  },
+  computed: {
+    offset() {
+      let height = window.innerHeight;
+      return '-' + height * (this.currentSlideNum - 1)  + 'px'
+    }
   }
+
 }
 </script>
 
@@ -39,5 +55,8 @@ export default {
     height: 100%
     position: relative
     background-color: #afcb05
+
+  .views
+    height: 100%
 
 </style>

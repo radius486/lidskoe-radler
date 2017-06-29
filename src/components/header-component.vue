@@ -6,7 +6,7 @@
       </div>
       <div class="header-menu">
         <a href="#">Галоўная</a>
-        <a href="#">Галасаваць</a>
+        <a href="#" @click.prevent='nextSlide'>Галасаваць</a>
         <a href="#">Больш пра ЛIДСКАЕ® Radler</a>
       </div>
     </div>
@@ -20,7 +20,16 @@ export default {
     return {
 
     }
+  },
+
+  methods: {
+    nextSlide() {
+      if (this.$parent.currentSlideNum < 2) {
+        this.$parent.currentSlideNum++;
+      }
+    }
   }
+
 }
 </script>
 
