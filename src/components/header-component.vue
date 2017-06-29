@@ -5,7 +5,7 @@
         <a href="/" title="Галоўная">Галоўная</a>
       </div>
       <div class="header-menu">
-        <a href="#">Галоўная</a>
+        <a href="#" @click.prevent='prevSlide'>Галоўная</a>
         <a href="#" @click.prevent='nextSlide'>Галасаваць</a>
         <a href="#">Больш пра ЛIДСКАЕ® Radler</a>
       </div>
@@ -24,8 +24,14 @@ export default {
 
   methods: {
     nextSlide() {
-      if (this.$parent.currentSlideNum < 2) {
+      if (this.$parent.currentSlideNum == 1) {
         this.$parent.currentSlideNum++;
+      }
+    },
+
+    prevSlide() {
+      if (this.$parent.currentSlideNum == 2) {
+        this.$parent.currentSlideNum--;
       }
     }
   }
