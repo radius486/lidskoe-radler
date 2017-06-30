@@ -2,6 +2,9 @@
   <div id="app">
     <header-component></header-component>
     <attention-popup></attention-popup>
+    <info-popup v-if='!attention' :header='headerFactory' :text='textFactory' :className="'factory'"></info-popup>
+<!--<info-popup :header='headerBeach' :text='textBeach' :className="'beach'"></info-popup>
+    <info-popup :header='headerBattle' :text='textBattle' :className="'sea-battle'"></info-popup> -->
     <transition name="fade">
       <div  @wheel='onScroll' class="views" v-if='!attention && !productPage' :style='{transform: "translateY(" + offset + ")" }'>
         <view-1></view-1>
@@ -19,6 +22,7 @@
 import headerComponent from './components/header-component.vue';
 import footerComponent from './components/footer-component.vue';
 import attentionPopup from './components/attention-popup.vue';
+import infoPopup from './components/info-popup.vue';
 import view1 from './components/view-1.vue';
 import view2 from './components/view-2.vue';
 import product from './components/product.vue';
@@ -29,7 +33,10 @@ export default {
     return {
       attention: true,
       currentSlideNum: 1,
-      productPage: false
+      productPage: false,
+
+      headerFactory: 'Арт-вечарына на пляжы',
+      textFactory: 'Жадаеш убачыць конкурс муралаў з лепшымі графіцістамі краіны на пляжы, дзе граюць дыджэі? Ты можаш проста танчыць,        сачыць за падзеямі і адпачываць з сябрамі. Гэта свежы фармат «Арт-вечарына на пляжы».'
     }
   },
 
@@ -37,6 +44,7 @@ export default {
     headerComponent,
     footerComponent,
     attentionPopup,
+    infoPopup,
     view1,
     view2,
     product
