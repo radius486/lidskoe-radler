@@ -69,6 +69,10 @@ export default {
     font-family: "futurafuturiscbold"
     src: url('assets/fonts/futurafuturiscbold.otf')
 
+  @font-face
+    font-family: "futurafuturis"
+    src: url('assets/fonts/futurafuturis.otf')
+
   html, body
     min-height: 100%
     height: 100%
