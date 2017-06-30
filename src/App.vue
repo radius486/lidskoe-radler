@@ -47,11 +47,16 @@ export default {
 </script>
 
 <style lang='sass'>
+  @font-face
+    font-family: "futurafuturiscbold"
+    src: url('assets/fonts/futurafuturiscbold.otf')
+
   html, body
     min-height: 100%
     height: 100%
     margin: 0
     padding: 0
+    font-family: 'futurafuturiscbold'
 
   #app
     width: 100%
