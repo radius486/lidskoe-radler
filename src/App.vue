@@ -35,6 +35,7 @@ export default {
     view1,
     view2
   },
+
   computed: {
     offset() {
       let height = window.innerHeight;
