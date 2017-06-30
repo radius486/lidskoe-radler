@@ -3,7 +3,7 @@
     <header-component></header-component>
     <attention-popup></attention-popup>
     <transition name="fade">
-      <div class="views" v-if='!attention' :style='{transform: "translateY(" + offset + ")" }'>
+      <div  @wheel='onScroll' class="views" v-if='!attention' :style='{transform: "translateY(" + offset + ")" }'>
         <view-1></view-1>
         <view-2></view-2>
       </div>
@@ -41,8 +41,20 @@ export default {
       let height = window.innerHeight;
       return '-' + height * (this.currentSlideNum - 1)  + 'px'
     }
-  }
+  },
 
+  methods: {
+    onScroll: function(e) {
+      e.preventDefault()
+      e.stopPropagation();
+      let delta = e.deltaY;
+      if (delta > 0) {
+        this.currentSlideNum = 2;
+      } else {
+        this.currentSlideNum = 1;
+      }
+    }
+  }
 }
 </script>
 
