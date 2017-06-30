@@ -7,7 +7,7 @@
       <div class="header-menu">
         <a href="#" @click.prevent='prevSlide'>Галоўная</a>
         <a href="#" @click.prevent='nextSlide'>Галасаваць</a>
-        <a href="#">Больш пра ЛIДСКАЕ® Radler</a>
+        <a href="#" @click.prevent='goToProduct'>Больш пра ЛIДСКАЕ® Radler</a>
       </div>
     </div>
   </div>
@@ -24,15 +24,21 @@ export default {
 
   methods: {
     nextSlide() {
+      this.$parent.productPage = false;
       if (this.$parent.currentSlideNum == 1) {
         this.$parent.currentSlideNum++;
       }
     },
 
     prevSlide() {
+      this.$parent.productPage = false;
       if (this.$parent.currentSlideNum == 2) {
         this.$parent.currentSlideNum--;
       }
+    },
+
+    goToProduct() {
+      this.$parent.productPage = true;
     }
   }
 

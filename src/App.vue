@@ -3,10 +3,13 @@
     <header-component></header-component>
     <attention-popup></attention-popup>
     <transition name="fade">
-      <div  @wheel='onScroll' class="views" v-if='!attention' :style='{transform: "translateY(" + offset + ")" }'>
+      <div  @wheel='onScroll' class="views" v-if='!attention && !productPage' :style='{transform: "translateY(" + offset + ")" }'>
         <view-1></view-1>
         <view-2></view-2>
       </div>
+    </transition>
+    <transition name="fade">
+      <product v-if='productPage'></product>
     </transition>
     <footer-component></footer-component>
   </div>
@@ -18,13 +21,15 @@ import footerComponent from './components/footer-component.vue';
 import attentionPopup from './components/attention-popup.vue';
 import view1 from './components/view-1.vue';
 import view2 from './components/view-2.vue';
+import product from './components/product.vue';
 
 export default {
   name: 'app',
   data () {
     return {
       attention: true,
-      currentSlideNum: 1
+      currentSlideNum: 1,
+      productPage: false
     }
   },
 
@@ -33,7 +38,8 @@ export default {
     footerComponent,
     attentionPopup,
     view1,
-    view2
+    view2,
+    product
   },
 
   computed: {
@@ -79,7 +85,7 @@ export default {
 
   .views
     height: 100%
-    transition: transform .5s ease-in
+    transition: transform .7s ease-in
 
   .fade-enter-active, .fade-leave-active
     transition: opacity .5s
