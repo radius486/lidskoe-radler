@@ -6,7 +6,7 @@
           <button class="close" @click.prevent='closePopup'>Close</button>
           <div class="info-popup_left" :class='className'>
             <div class="info-popup_actions">
-              <button>галасаваць</button>
+              <button @click.prevent='openCheckIn'>галасаваць</button>
               <button @click.prevent='closePopup'>назад</button>
             </div>
           </div>
@@ -45,6 +45,22 @@ export default {
         this.$parent.showBattle = false;
         break;
       }
+    },
+
+    openCheckIn: function() {
+      switch (this.className) {
+        case 'factory':
+        this.$parent.checkInFactory = true;
+        break;
+        case 'beach':
+        this.$parent.checkInBeach = true;
+        break;
+        case 'sea-battle':
+        this.$parent.checkInBattle = true;
+        break;
+      }
+
+      this.closePopup();
     }
   }
 }

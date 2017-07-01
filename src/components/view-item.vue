@@ -4,7 +4,7 @@
     <span class="voice">{{voice}}</span>
     <div class="item_overlay">
       <button class="more" @click.prevent='openPopup'>Падрабязней</button>
-      <button class="vote">Галасаваць</button>
+      <button class="vote" @click.prevent='openCheckIn'>Галасаваць</button>
     </div>
   </div>
 </template>
@@ -32,6 +32,20 @@
           break;
           case 'sea-battle':
           this.$parent.showBattle = true;
+          break;
+        }
+      },
+
+      openCheckIn: function() {
+        switch (this.className) {
+          case 'factory':
+          this.$parent.checkInFactory = true;
+          break;
+          case 'beach':
+          this.$parent.checkInBeach = true;
+          break;
+          case 'sea-battle':
+          this.$parent.checkInBattle = true;
           break;
         }
       }
