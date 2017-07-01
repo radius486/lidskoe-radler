@@ -1,13 +1,13 @@
 <template>
   <transition name="fade">
-    <div v-if='opened' class="info-popup_overlay">
+    <div class="info-popup_overlay">
       <div class="info-popup">
         <div class="info-popup_inner">
           <button class="close" @click.prevent='closePopup'>Close</button>
           <div class="info-popup_left" :class='className'>
             <div class="info-popup_actions">
               <button>галасаваць</button>
-              <button>назад</button>
+              <button @click.prevent='closePopup'>назад</button>
             </div>
           </div>
           <div class="info-popup_right">
@@ -28,13 +28,23 @@ export default {
 
   data () {
     return {
-      opened: true
+
     }
   },
 
   methods: {
     closePopup: function() {
-      this.opened = false;
+      switch (this.className) {
+        case 'factory':
+        this.$parent.showFactory = false;
+        break;
+        case 'beach':
+        this.$parent.showBeach = false;
+        break;
+        case 'sea-battle':
+        this.$parent.showBattle = false;
+        break;
+      }
     }
   }
 }

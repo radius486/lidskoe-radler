@@ -9,28 +9,47 @@
         <view-item :voice='voiceBattle' :text='textBattle' :className="'sea-battle'"></view-item>
       </div>
     </div>
+    <info-popup v-if='showFactory' :header='headerFactory' :text='textFactoryDetailed' :className="'factory'"></info-popup>
+    <info-popup v-if='showBeach' :header='headerBeach' :text='textBeachDetailed' :className="'beach'"></info-popup>
+    <info-popup v-if='showBattle' :header='headerBattle' :text='textBattleDetailed' :className="'sea-battle'"></info-popup>
   </div>
 </template>
 
 <script>
 
   import viewItem from './view-item.vue';
+  import infoPopup from './info-popup.vue';
 
   export default {
     name: 'view-2',
     data () {
       return {
+        showFactory: false,
+        showBeach: false,
+        showBattle: false,
+
         voiceFactory: 250,
         voiceBeach: 468,
         voiceBattle: 127,
         textFactory: 'мазгабойня на заводзе',
         textBeach: 'Арт-вечарына на пляжы',
-        textBattle: 'марскi бой у «Дрымлэндзе»'
+        textBattle: 'марскi бой у «Дрымлэндзе»',
+
+
+        headerBeach: 'Арт-вечарына на пляжы',
+        textBeachDetailed: 'Жадаеш убачыць конкурс муралаў з лепшымі графіцістамі краіны на пляжы, дзе граюць дыджэі? Ты можаш проста танчыць,        сачыць за падзеямі і адпачываць з сябрамі. Гэта свежы фармат «Арт-вечарына на пляжы».',
+
+        headerFactory: 'мазгабойня на заводзе',
+        textFactoryDetailed: 'Жадаеш выпрабаваць свае мазгі ў адным з самых папулярных фарматаў інтэлектуальных гульняў – мазгабойні? Давай зробім гэта ў нечаканым месцы і з вялікай колькасцю людзей, каб атрымалася сапраўдная свежая вечарына. Галасуй за фармат «Мазгабойня на заводзе».',
+
+        headerBattle: 'марскi бой у «Дрымлэндзе»',
+        textBattleDetailed: 'Жадаеш прыняць удзел у самай масавай бойцы з водных пісталетаў, правесці час на пляжы ў межах горада і адчуць, што спёка – гэта нагода для прыгод? Аддавай свой голас за свежы фармат вечарыны «Марскі бой у „Дрымлэндзе“». '
       }
     },
 
     components: {
-      viewItem
+      viewItem,
+      infoPopup
     }
   }
 </script>
