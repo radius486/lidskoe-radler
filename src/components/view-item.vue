@@ -1,10 +1,12 @@
 <template>
   <div class="view_item" :class='className'>
-    <h2 class="view_item_title">{{text}}</h2>
-    <span class="voice">{{voice}}</span>
-    <div class="item_overlay">
-      <button class="more" @click.prevent='openPopup'>Падрабязней</button>
-      <button class="vote" @click.prevent='openCheckIn'>Галасаваць</button>
+    <div class="view_item_inner">
+      <h2 class="view_item_title">{{text}}</h2>
+      <span class="voice">{{voice}}</span>
+      <div class="item_overlay">
+        <button class="more" @click.prevent='openPopup'>Падрабязней</button>
+        <button class="vote" @click.prevent='openCheckIn'>Галасаваць</button>
+      </div>
     </div>
   </div>
 </template>

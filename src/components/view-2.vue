@@ -1,6 +1,6 @@
 <template>
   <div class="view-2">
-    <div class="view_inner">
+    <div class="view_content">
       <h2 class="view_title">аддай голас<br> за мiкс-вечарыну</h2>
       <h3 class="view_subtitle">і атрымай магчымасць выйграць квіткі</h3>
       <div class="view_list">

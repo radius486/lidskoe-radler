@@ -1,26 +1,60 @@
 .view_item
-  width: 275px
-  height: 430px
+  width: 30%
+  box-sizing: border-box
+  position: relative
+
+  &:before
+    content: ''
+    display: block
+    margin-bottom: calc(100% * 1.56)
+
+    @media(max-width: 1310px)
+      margin-bottom: calc(100% * 1.35)
+      background-position: center 100%
+      background-size: 80%
+
+
+
+  &.factory
+    background: url('../assets/images/factory.png') no-repeat center
+    background-size: contain
+
+    @media(max-width: 1310px)
+      background-size: 80%
+
+  &.beach
+    background: url('../assets/images/beach.png') no-repeat center
+    background-size: contain
+
+    @media(max-width: 1310px)
+      background-size: 80%
+
+  &.sea-battle
+    background: url('../assets/images/sea-battle.png') no-repeat center
+    background-size: contain
+
+    @media(max-width: 1310px)
+      background-size: 80%
+
+
+.view_item_inner
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  padding: 30px 30px 0 30px
   display: flex
   align-items: center
   justify-content: space-between
   flex-direction: column
-  padding: 30px 30px 0 30px
-  box-sizing: border-box
-  position: relative
+
+  @media(max-width: 1310px)
+    padding: 20px
 
 
-  &.factory
-    margin-right: 40px
-    background: url('../assets/images/factory.png') no-repeat center
-
-  &.beach
-    margin-right: 40px
-    background: url('../assets/images/beach.png') no-repeat center
-
-
-  &.sea-battle
-    background: url('../assets/images/sea-battle.png') no-repeat center
+  @media (max-width: 1023px)
+    padding: 20px 0
 
 
 

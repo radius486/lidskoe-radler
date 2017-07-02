@@ -6,7 +6,7 @@
           <button class="close" @click.prevent='closePopup'>Close</button>
           <div class="check-in-popup_left">
             <h2>Рэгістрацыя</h2>
-            <p>Колькасць месцаў абмежаван</p>
+            <p>Колькасць месцаў абмежавана</p>
             <form>
               <input type="text" placeholder="iмя">
               <input type="text" placeholder="прозвiшча">
