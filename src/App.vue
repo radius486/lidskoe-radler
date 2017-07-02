@@ -105,7 +105,10 @@ export default {
       opacity: 1
 
     &.animate
-      background-position-y: -300px
+    background-position-y: -300px
+
+    @media(max-width: 768px)
+      display: none
 
   .views
     height: 100%

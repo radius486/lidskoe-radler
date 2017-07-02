@@ -9,6 +9,7 @@
           <a href="#" class="tweet">Twitter</a>
         </div>
         <a class="rules" href="#">Поўныя правілы</a>
+        <a class="rules_mobile" href="#">Спамуй поўныя правілы</a>
       </div>
     </div>
   </div>
