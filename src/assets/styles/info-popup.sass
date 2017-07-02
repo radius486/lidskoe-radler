@@ -11,14 +11,16 @@
 
 
 .info-popup
-  max-width: 940px
-  max-height: 450px
+  max-width: 980px
+  max-height: 490px
   width: 100%
   height: 100%
   background-color: rgba(0, 0, 0, 0.2)
   background-color: #81a41b
   box-sizing: border-box
   position: relative
+  background-clip: content-box
+  border: 20px solid transparent
 
   h2
     font-family: 'futurafuturiscbold'
@@ -48,6 +50,9 @@
   align-items: center
   z-index: 1
 
+  @media (max-width: 1024px)
+    padding: 0 35px
+
 
 .info-popup_left
   width: 50%
@@ -62,15 +67,24 @@
     background: url('../assets/images/factory.png') no-repeat left 30px
     background-size: 80%
 
+    @media (max-width: 1024px)
+      background-size: 70%
+
 
   &.beach
     background: url('../assets/images/beach.png') no-repeat left 30px
     background-size: 80%
 
+    @media (max-width: 1024px)
+      background-size: 70%
+
 
   &.sea-battle
     background: url('../assets/images/sea-battle.png') no-repeat left 30px
     background-size: 80%
+
+    @media (max-width: 1024px)
+      background-size: 70%
 
 
 .info-popup_right

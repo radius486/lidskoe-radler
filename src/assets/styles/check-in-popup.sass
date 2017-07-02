@@ -11,14 +11,19 @@
 
 
 .check-in-popup
-  max-width: 940px
-  max-height: 515px
+  max-width: 980px
+  max-height: 555px
   width: 100%
   height: 100%
   background-color: rgba(0, 0, 0, 0.2)
   background-color: #81a41b
   box-sizing: border-box
   position: relative
+  background-clip: content-box
+  border: 20px solid transparent
+
+  @media (max-width: 1310px)
+    max-height: 500px
 
   h2
     font-family: 'futurafuturiscbold'
@@ -27,11 +32,17 @@
     color: #fff
     text-transform: uppercase
 
+    @media (max-width: 1024px)
+      font-size: 40px
+
   p
     font-family: 'futurafuturis'
     font-size: 26px
     margin: 0
     color: #fff
+
+    @media (max-width: 1024px)
+      font-size: 20px
 
   input[type="text"],
   input[type="email"],
@@ -48,6 +59,10 @@
     border: none
     border-radius: 10px
 
+    @media (max-width: 1024px)
+      height: 40px
+
+
     &:focus
       outline: none
 
@@ -58,6 +73,9 @@
   display: flex
   justify-content: spase-between
   position: relative
+
+  @media (max-width: 1024px)
+    margin-top: 20px
 
   input
     opacity: 0
@@ -104,12 +122,19 @@
   align-items: center
   z-index: 1
 
+  @media (max-width: 1310px)
+    padding: 0 35px
+
+
 
 .check-in-popup_left
   width: 45%
   height: 100%
   padding: 40px 0
   box-sizing: border-box
+
+  @media (max-width: 1310px)
+    padding: 20px 0
 
 
 .check-in-popup_right
@@ -121,19 +146,31 @@
   box-sizing: border-box
   padding-bottom: 40px
 
+  @media (max-width: 1310px)
+    padding-bottom: 20px
+
   &.factory
     background: url('../assets/images/factory2.png') no-repeat center 80px
     background-size: 90%
+
+    @media (max-width: 1310px)
+      background-size: 80%
 
 
   &.beach
     background: url('../assets/images/beach2.png') no-repeat center 50px
     background-size: 80%
 
+    @media (max-width: 1310px)
+      background-size: 70%
+
 
   &.sea-battle
     background: url('../assets/images/sea-battle2.png') no-repeat center 50px
     background-size: 85%
+
+    @media (max-width: 1310px)
+      background-size: 75%
 
 
 .check-in-popup_actions
@@ -151,6 +188,10 @@
     border-radius: 12px
     cursor: pointer
     text-transform: uppercase
+
+
+    @media (max-width: 1024px)
+      font-size: 20px
 
     &:first-child
       margin-right: 20px
