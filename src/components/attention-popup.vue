@@ -4,7 +4,7 @@
       <div class="attention-popup">
         <transition name="fade">
           <div v-if='!restriction' class="attention-popup_inner" key="question">
-            <p>Вам ужо споўнілася 18 гадоў?</p>
+            <p>Вам ужо споўнілася <br> 18 гадоў?</p>
             <div class="attention-popup_actions">
               <button @click='openContent'>Так</button>
               <button @click='showRestriction'>Не</button>

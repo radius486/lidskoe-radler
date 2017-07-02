@@ -1,17 +1,13 @@
 <template>
   <div class="view-1">
-    <div class="view_left" v-bind:class="{ animate: $parent.currentSlideNum == 2}">
-      <div class="bottle">
+    <div class="view_content" v-bind:class="{ animate: $parent.currentSlideNum == 2}">
+      <div class="view_info">
         <div class="socials">
           <a href="#" class="fb">Facebook</a>
           <a href="#" class="vk">Vkontakte</a>
           <a href="#" class="inst">Instagram</a>
           <a href="#" class="tweet">Twitter</a>
         </div>
-      </div>
-    </div>
-    <div class="view_right" v-bind:class="{ animate: $parent.currentSlideNum == 2}">
-      <div class="view_info">
         <a class="rules" href="#">Поўныя правілы</a>
       </div>
     </div>
