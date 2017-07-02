@@ -10,13 +10,16 @@
         <a href="#" @click.prevent='goToProduct'>Больш пра ЛIДСКАЕ® Radler</a>
       </div>
       <div class="header-menu_mobile">
+        <transition name='open-menu'>
+          <ul class="header-menu_mobile_inner" v-if='menuOpened'>
+            <li><a href="#" @click.prevent='prevSlide'>Галоўная</a></li>
+            <li><a href="#" @click.prevent='prevSlide'>Як удзельнiчаць</a></li>
+            <li><a href="#" @click.prevent='nextSlide'>Галасаваць</a></li>
+            <li><a href="#" @click.prevent='goToProduct'>Больш пра ЛIДСКАЕ® Radler</a></li>
+          </ul>
+        </transition>
         <a href="#" class="open" v-if='!menuOpened' @click.prevent='openMenu'>Open</a>
         <a href="#" class="close" v-else @click.prevent='closeMenu'>Close</a>
-        <ul class="header-menu_mobile_inner" v-if='menuOpened'>
-          <li><a href="#" @click.prevent='prevSlide'>Галоўная</a></li>
-          <li><a href="#" @click.prevent='nextSlide'>Галасаваць</a></li>
-          <li><a href="#" @click.prevent='goToProduct'>Больш пра ЛIДСКАЕ® Radler</a></li>
-        </ul>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="lemons" v-bind:class="{ animate: currentSlideNum == 2, 'has-image': !attention}"></div>
+    <div class="lemons" v-bind:class="{ animate: currentSlideNum == 2, 'is-visiable': !attention}"></div>
     <header-component></header-component>
     <attention-popup></attention-popup>
     <transition name="fade">
@@ -101,7 +101,7 @@ export default {
     transition: background 0.7s ease-in, opacity 0.5s ease-in
     opacity: 0
 
-    &.has-image
+    &.is-visiable
       opacity: 1
 
     &.animate
