@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div class="lemons" v-bind:class="{ animate: currentSlideNum == 2, 'has-image': !attention}"></div>
     <header-component></header-component>
     <attention-popup></attention-popup>
     <transition name="fade">
@@ -79,13 +80,32 @@ export default {
     margin: 0
     padding: 0
     font-family: 'futurafuturiscbold'
+    background-color: #afcb05
 
   #app
     width: 100%
     height: 100%
     position: relative
-    background-color: #afcb05
     overflow: hidden
+    background-size: contain
+
+  .lemons
+    content: ''
+    position: absolute
+    display: block
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: url('assets/images/left-lemons.png') repeat-y left center, url('assets/images/right-lemons.png') repeat-y right center
+    transition: background 0.7s ease-in, opacity 0.5s ease-in
+    opacity: 0
+
+    &.has-image
+      opacity: 1
+
+    &.animate
+      background-position-y: -300px
 
   .views
     height: 100%

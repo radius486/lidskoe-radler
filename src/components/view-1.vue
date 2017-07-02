@@ -1,6 +1,6 @@
 <template>
   <div class="view-1">
-    <div class="view_content" v-bind:class="{ animate: $parent.currentSlideNum == 2}">
+    <div class="view_content">
       <div class="view_info">
         <div class="socials">
           <a href="#" class="fb">Facebook</a>

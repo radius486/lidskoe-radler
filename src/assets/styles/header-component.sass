@@ -4,6 +4,7 @@
   right: 0
   left: 0
   background-color: rgba(0, 0, 0, 0.2)
+  background-color: #81a41b
   height: 100px
   z-index: 2
 
@@ -42,6 +43,9 @@
   display: flex
   justify-content: space-between
 
+  @media(max-width: 768px)
+    display: none
+
   a
     font-size: 24px
     color: #fff
@@ -52,5 +56,15 @@
     height: 30px
     line-height: 30px
     font-family: 'futurafuturis'
+
+
+.header-menu_mobile
+  display: none
+
+  @media(max-width: 768px)
+    display: flex
+
+.header-menu_mobile_inner
+  display: flex
 
 
