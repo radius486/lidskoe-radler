@@ -12,10 +12,9 @@
       <div class="header-menu_mobile">
         <transition name='open-menu'>
           <ul class="header-menu_mobile_inner" v-if='menuOpened'>
-            <li><a href="#" @click.prevent='prevSlide'>Галоўная</a></li>
-            <li><a href="#" @click.prevent='prevSlide'>Як удзельнiчаць</a></li>
-            <li><a href="#" @click.prevent='nextSlide'>Галасаваць</a></li>
-            <li><a href="#" @click.prevent='goToProduct'>Больш пра ЛIДСКАЕ® Radler</a></li>
+            <li><a href="#" @click.prevent='goToShema'>Як удзельнiчаць</a></li>
+            <li><a href="#">Галасаваць</a></li>
+            <li><a href="#" @click.prevent='goToProductMobile'>Больш пра ЛIДСКАЕ® Radler</a></li>
           </ul>
         </transition>
         <a href="#" class="open" v-if='!menuOpened' @click.prevent='openMenu'>Open</a>
@@ -51,6 +50,20 @@ export default {
 
     goToProduct() {
       this.$parent.productPage = true;
+    },
+
+    goToShema() {
+      this.closeMenu();
+      this.$parent.shemaPage = true;
+      this.$parent.homePage = false;
+      this.$parent.productMobile = false;
+    },
+
+    goToProductMobile() {
+      this.closeMenu();
+      this.$parent.homePage = false;
+      this.$parent.shemaPage = false;
+      this.$parent.productMobile = true;
     },
 
     openMenu() {

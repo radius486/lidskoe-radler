@@ -9,9 +9,24 @@
         <view-2></view-2>
       </div>
     </transition>
+
     <transition name="fade">
       <product v-if='productPage'></product>
     </transition>
+
+    <div class="mobile-layout">
+      <transition name="fade">
+        <home v-if='homePage && !attention'></home>
+      </transition>
+
+      <transition name="fade">
+        <shema v-if='shemaPage'></shema>
+      </transition>
+
+      <transition name="fade">
+        <product-mobile v-if='productMobile'></product-mobile>
+      </transition>
+    </div>
     <footer-component></footer-component>
   </div>
 </template>
@@ -23,6 +38,9 @@ import attentionPopup from './components/attention-popup.vue';
 import view1 from './components/view-1.vue';
 import view2 from './components/view-2.vue';
 import product from './components/product.vue';
+import productMobile from './components/product-mobile.vue';
+import shema from './components/shema.vue';
+import home from './components/home.vue';
 
 export default {
   name: 'app',
@@ -30,7 +48,10 @@ export default {
     return {
       attention: true,
       currentSlideNum: 1,
-      productPage: false
+      productPage: false,
+      productMobile: false,
+      shemaPage: false,
+      homePage: true
     }
   },
 
@@ -40,7 +61,10 @@ export default {
     attentionPopup,
     view1,
     view2,
-    product
+    product,
+    productMobile,
+    shema,
+    home
   },
 
   computed: {
@@ -66,58 +90,5 @@ export default {
 </script>
 
 <style lang='sass'>
-  @font-face
-    font-family: "futurafuturiscbold"
-    src: url('assets/fonts/futurafuturiscbold.otf')
-
-  @font-face
-    font-family: "futurafuturis"
-    src: url('assets/fonts/futurafuturis.otf')
-
-  html, body
-    min-height: 100%
-    height: 100%
-    margin: 0
-    padding: 0
-    font-family: 'futurafuturiscbold'
-    background-color: #afcb05
-
-  #app
-    width: 100%
-    height: 100%
-    position: relative
-    overflow: hidden
-    background-size: contain
-
-  .lemons
-    content: ''
-    position: absolute
-    display: block
-    top: 0
-    bottom: 0
-    left: 0
-    right: 0
-    background: url('assets/images/left-lemons.png') repeat-y left center, url('assets/images/right-lemons.png') repeat-y right center
-    transition: background 0.7s ease-in, opacity 0.5s ease-in
-    opacity: 0
-
-    &.is-visiable
-      opacity: 1
-
-    &.animate
-    background-position-y: -300px
-
-    @media(max-width: 768px)
-      display: none
-
-  .views
-    height: 100%
-    transition: transform .7s ease-in
-
-  .fade-enter-active, .fade-leave-active
-    transition: opacity .5s
-
-  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */
-    opacity: 0
-
+  @import './assets/styles/app.sass'
 </style>
