@@ -24,6 +24,30 @@
   import infoPopup from './info-popup.vue';
   import checkInPopup from './check-in-popup.vue';
 
+  let count1 = 0;
+  let count2 = 0;
+  let count3 = 0;
+
+  let HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
+      let anHttpRequest = new XMLHttpRequest();
+      anHttpRequest.onreadystatechange = function() {
+          if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+              aCallback(anHttpRequest.responseText);
+      }
+      anHttpRequest.open( "GET", aUrl, true );
+      anHttpRequest.send( null );
+    }
+  }
+
+  let client = new HttpClient();
+  client.get('http://event.edenkit.com/admin321/getstat.php', function(response) {
+    let arr_result = response.split(';');
+    count1 = arr_result[0];
+    count2 = arr_result[1];
+    count3 = arr_result[2];
+  });
+
   export default {
     name: 'view-2',
     data () {
@@ -36,9 +60,10 @@
         checkInBeach: false,
         checkInBattle: false,
 
-        voiceFactory: 250,
-        voiceBeach: 468,
-        voiceBattle: 127,
+        voiceFactory: count1,
+        voiceBeach: count2,
+        voiceBattle: count3,
+
         textFactory: 'мазгабойня на заводзе',
         textBeach: 'Арт-вечарына на пляжы',
         textBattle: 'марскi бой у «Дрымлэндзе»',

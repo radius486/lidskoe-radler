@@ -8,12 +8,12 @@
             <h2>Рэгістрацыя</h2>
             <p>Колькасць месцаў абмежавана</p>
             <form>
-              <input type="text" placeholder="iмя">
-              <input type="text" placeholder="прозвiшча">
-              <input type="phone" placeholder="+375 (29) ___ __ __">
-              <input type="email" placeholder="e-mail:">
+              <input id="name" type="text" placeholder="iмя">
+              <input id="sname" type="text" placeholder="прозвiшча">
+              <input id="phone" type="phone" placeholder="+375 (29) ___ __ __">
+              <input id="email" type="email" placeholder="e-mail:">
               <div class="bookBox">
-                <input id="book" type="checkbox">
+                <input id="book" value="1" type="checkbox">
                 <label for="book">Забранiраваць мне месца на мерапрыемстве</label>
               </div>
             </form>
@@ -58,9 +58,31 @@ export default {
     },
 
     register() {
-      //TODO: Add registration here
       console.log('Register to ' + this.className);
       this.closePopup();
+
+      let name = document.getElementById('name').value;
+      let sname = document.getElementById('sname').value;
+      let phone = document.getElementById('phone').value;
+      let email = document.getElementById('email').value;
+      let book = document.getElementById('book').value;
+
+      let HttpClient = function() {
+        this.get = function(aUrl, aCallback) {
+          let anHttpRequest = new XMLHttpRequest();
+          anHttpRequest.onreadystatechange = function() {
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+              aCallback(anHttpRequest.responseText);
+          }
+          anHttpRequest.open( "GET", aUrl, true );
+          anHttpRequest.send( null );
+        }
+      }
+
+      let client = new HttpClient();
+      client.get('http://event.edenkit.com/admin321/save_voite.php?name=' + name + '&sname=' + sname + '&phone=' + phone + '&email=' + email + '&is_going=' + book + '&name_event=' + this.className, function(response) {
+
+      });
     }
   }
 }
