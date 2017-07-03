@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-inner">
       <div class="logo">
-        <a href="/" title="Галоўная">Галоўная</a>
+        <a href="/" title="Галоўная"><img src="../assets/images/logo.png"></a>
       </div>
       <div class="header-menu">
         <a href="#" @click.prevent='prevSlide'>Галоўная</a>
