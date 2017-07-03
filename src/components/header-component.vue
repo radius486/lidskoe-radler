@@ -13,7 +13,7 @@
         <transition name='open-menu'>
           <ul class="header-menu_mobile_inner" v-if='menuOpened'>
             <li><a href="#" @click.prevent='goToShema'>Як удзельнiчаць</a></li>
-            <li><a href="#">Галасаваць</a></li>
+            <li><a href="#" @click.prevent='goToVote'>Галасаваць</a></li>
             <li><a href="#" @click.prevent='goToProductMobile'>Больш пра ЛIДСКАЕ® Radler</a></li>
           </ul>
         </transition>
@@ -57,6 +57,15 @@ export default {
       this.$parent.shemaPage = true;
       this.$parent.homePage = false;
       this.$parent.productMobile = false;
+      this.$parent.votePage = false;
+    },
+
+    goToVote() {
+      this.closeMenu();
+      this.$parent.votePage = true;
+      this.$parent.shemaPage = false;
+      this.$parent.homePage = false;
+      this.$parent.productMobile = false;
     },
 
     goToProductMobile() {
@@ -64,6 +73,7 @@ export default {
       this.$parent.homePage = false;
       this.$parent.shemaPage = false;
       this.$parent.productMobile = true;
+      this.$parent.votePage = false;
     },
 
     openMenu() {

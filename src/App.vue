@@ -24,6 +24,10 @@
       </transition>
 
       <transition name="fade">
+        <vote v-if='votePage'></vote>
+      </transition>
+
+      <transition name="fade">
         <product-mobile v-if='productMobile'></product-mobile>
       </transition>
     </div>
@@ -41,6 +45,7 @@ import product from './components/product.vue';
 import productMobile from './components/product-mobile.vue';
 import shema from './components/shema.vue';
 import home from './components/home.vue';
+import vote from './components/vote.vue';
 
 export default {
   name: 'app',
@@ -51,7 +56,8 @@ export default {
       productPage: false,
       productMobile: false,
       shemaPage: false,
-      homePage: true
+      homePage: true,
+      votePage: false
     }
   },
 
@@ -64,7 +70,8 @@ export default {
     product,
     productMobile,
     shema,
-    home
+    home,
+    vote
   },
 
   computed: {
