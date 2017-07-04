@@ -1,29 +1,26 @@
 <template>
   <transition name="fade">
-    <div class="check-in-popup_overlay">
-      <div class="check-in-popup">
-        <div class="check-in-popup_inner">
-          <button class="close" @click.prevent='closePopup'>Close</button>
-          <div class="check-in-popup_left">
-            <h2>Рэгістрацыя</h2>
-            <p>Колькасць месцаў абмежавана</p>
-            <form>
-              <input id="name" type="text" placeholder="iмя">
-              <input id="sname" type="text" placeholder="прозвiшча">
-              <input id="phone" type="phone" placeholder="+375 (29) ___ __ __">
-              <input id="email" type="email" placeholder="e-mail:">
-              <div class="bookBox">
-                <input id="book" value="1" type="checkbox">
-                <label for="book">Забранiраваць мне месца на мерапрыемстве</label>
-              </div>
-            </form>
+    <div class="check-in-popup">
+      <button class="close" @click.prevent='closePopup'>Close</button>
+      <div class="check-in-popup_left">
+        <h2>Рэгістрацыя</h2>
+        <p>Колькасць месцаў абмежавана</p>
+        <form>
+          <input id="name" type="text" placeholder="iмя">
+          <input id="sname" type="text" placeholder="прозвiшча">
+          <input id="phone" type="phone" placeholder="+375 (29) ___ __ __">
+          <input id="email" type="email" placeholder="e-mail:">
+          <div class="bookBox">
+            <input id="book" value="1" type="checkbox">
+            <label for="book">Забранiраваць мне месца на мерапрыемстве</label>
           </div>
-          <div class="check-in-popup_right" :class='className'>
-            <div class="check-in-popup_actions">
-              <button @click.prevent='register'>зарэгiстравацца</button>
-              <button @click.prevent='closePopup'>адмена</button>
-            </div>
-          </div>
+        </form>
+      </div>
+      <div class="check-in-popup_right">
+        <div class="image" :class='className'></div>
+        <div class="check-in-popup_actions">
+          <button @click.prevent='register'>зарэгiстравацца</button>
+          <button @click.prevent='closePopup'>адмена</button>
         </div>
       </div>
     </div>
