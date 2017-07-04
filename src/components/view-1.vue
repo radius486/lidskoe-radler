@@ -8,6 +8,7 @@
           <a href="#" class="inst">Instagram</a>
           <a href="#" class="tweet">Twitter</a>
         </div>
+        <a href="#" class="vote" @click.prevent = '$parent.currentSlideNum = 2'>Галасаваць</a>
         <a class="rules" href="#">Поўныя правілы</a>
       </div>
     </div>

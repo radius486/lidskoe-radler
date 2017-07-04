@@ -1,7 +1,9 @@
 <template>
   <div class="shema">
     <div class="shema_content">
-      <div class="shema_info"></div>
+      <div class="shema_info">
+        <a href="#" class="vote" @click.prevent = 'goToVote'>Галасаваць</a>
+      </div>
     </div>
   </div>
 </template>
@@ -12,6 +14,15 @@
     data () {
       return {
 
+      }
+    },
+
+    methods: {
+      goToVote() {
+        this.$parent.votePage = true;
+        this.$parent.shemaPage = false;
+        this.$parent.homePage = false;
+        this.$parent.productMobile = false;
       }
     }
   }
