@@ -1,20 +1,17 @@
 <template>
   <transition name="fade">
-    <div class="info-popup_overlay">
-      <div class="info-popup">
-        <div class="info-popup_inner">
-          <button class="close" @click.prevent='closePopup'>Close</button>
-          <div class="info-popup_left" :class='className'>
-            <div class="info-popup_actions">
-              <button @click.prevent='openCheckIn'>галасаваць</button>
-              <button @click.prevent='closePopup'>назад</button>
-            </div>
-          </div>
-          <div class="info-popup_right">
-            <h2>{{header}}</h2>
-            <p>{{text}}</p>
-          </div>
+    <div class="info-popup">
+      <button class="close" @click.prevent='closePopup'>Close</button>
+      <div class="info-popup_left">
+        <div class="image" :class='className'></div>
+        <div class="info-popup_actions">
+          <button @click.prevent='openCheckIn'>галасаваць</button>
+          <button @click.prevent='closePopup'>назад</button>
         </div>
+      </div>
+      <div class="info-popup_right">
+        <h2>{{header}}</h2>
+        <p>{{text}}</p>
       </div>
     </div>
   </transition>
