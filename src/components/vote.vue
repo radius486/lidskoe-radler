@@ -7,13 +7,13 @@
         <view-item :voice='voiceBeach' :text='textBeach' :className="'beach'"></view-item>
         <view-item :voice='voiceBattle' :text='textBattle' :className="'sea-battle'"></view-item>
       </div>
+      <info-popup v-if='showFactory' :header='headerFactory' :text='textFactoryDetailed' :className="'factory'"></info-popup>
+      <info-popup v-if='showBeach' :header='headerBeach' :text='textBeachDetailed' :className="'beach'"></info-popup>
+      <info-popup v-if='showBattle' :header='headerBattle' :text='textBattleDetailed' :className="'sea-battle'"></info-popup>
+      <check-in-popup v-if='checkInFactory' :className="'factory'"></check-in-popup>
+      <check-in-popup v-if='checkInBeach' :className="'beach'"></check-in-popup>
+      <check-in-popup v-if='checkInBattle' :className="'sea-battle'"></check-in-popup>
     </div>
-    <info-popup v-if='showFactory' :header='headerFactory' :text='textFactoryDetailed' :className="'factory'"></info-popup>
-    <info-popup v-if='showBeach' :header='headerBeach' :text='textBeachDetailed' :className="'beach'"></info-popup>
-    <info-popup v-if='showBattle' :header='headerBattle' :text='textBattleDetailed' :className="'sea-battle'"></info-popup>
-    <check-in-popup v-if='checkInFactory' :className="'factory'"></check-in-popup>
-    <check-in-popup v-if='checkInBeach' :className="'beach'"></check-in-popup>
-    <check-in-popup v-if='checkInBattle' :className="'sea-battle'"></check-in-popup>
   </div>
 </template>
 
