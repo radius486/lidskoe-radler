@@ -6,6 +6,13 @@
   @media(max-width: 768px)
     width: 100%
 
+    &:hover
+      background-color: #81a41b!important
+
+      .item_overlay
+        opacity: 1
+
+
   @media(max-width: 660px)
     margin-bottom: 20px
 
@@ -35,7 +42,7 @@
 
     @media(max-width: 768px)
       background-size: 35%
-      background-position: right center
+      background-position: right 10px center
 
   &.beach
     background: url('../assets/images/beach.png') no-repeat center
@@ -46,7 +53,7 @@
 
     @media(max-width: 768px)
       background-size: 35%
-      background-position: right center
+      background-position: right 10px center
 
   &.sea-battle
     background: url('../assets/images/sea-battle.png') no-repeat center
@@ -57,7 +64,7 @@
 
     @media(max-width: 768px)
       background-size: 35%
-      background-position: right center
+      background-position: right 10px center
 
 
 .view_item_inner
@@ -82,6 +89,7 @@
   @media(max-width: 768px)
     justify-content: center
     align-items: flex-start
+    padding: 20px
 
 
 
@@ -99,6 +107,9 @@
 
   @media(max-width: 660px)
     font-size: 24px
+
+  @media(max-width: 420px)
+    font-size: 18px
 
 
 .voice
@@ -121,6 +132,8 @@
     background-size: initial
     background-position: right center
 
+  @media(max-width: 420px)
+    font-size: 30px
 
 .item_overlay
   position: absolute
@@ -138,6 +151,15 @@
 
   @media (max-width: 1024px)
     padding: 15px
+
+  @media(max-width: 768px)
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-end
+    bottom: 0
+    top: initial
+    right: initial
+    background-color: transparent
 
   &:hover
     opacity: 1
@@ -158,8 +180,18 @@
     @media (max-width: 1024px)
       font-size: 18px
 
+    @media(max-width: 420px)
+      font-size: 12px
+
     &:focus
       outline: none
 
     &:first-child
       margin-bottom: 30px
+
+      @media(max-width: 768px)
+        margin-bottom: 0
+        margin-right: 20px
+
+      @media(max-width: 420px)
+        margin-right: 10px
