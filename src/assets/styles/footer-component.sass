@@ -3,8 +3,8 @@
   bottom: 0
   left: 0
   right: 0
-  //height: 130px
-  height: 10vh
+  max-height: 130px
+  height: 14vh
   padding: 0 30px
 
   @media(max-width: 420px)
@@ -12,9 +12,13 @@
 
 .footer-inner
   max-width: 1140px
+  width: 120vh
   background: url('../assets/images/footer.png') no-repeat center
   height: 100%
   margin: 0 auto
-  background-size: cover
+  background-size: contain
   box-sizing: border-box
+
+  @media(max-width: 1140px)
+    max-width: 100%
 
