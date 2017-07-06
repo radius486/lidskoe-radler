@@ -14,7 +14,7 @@
       <product v-if='productPage'></product>
     </transition>
 
-    <div class="mobile-layout">
+    <div class="mobile-layout" @click='menuOpened = false'>
       <transition name="fade">
         <home v-if='homePage && !attention'></home>
       </transition>
@@ -57,7 +57,8 @@ export default {
       productMobile: false,
       shemaPage: false,
       homePage: true,
-      votePage: false
+      votePage: false,
+      menuOpened: false
     }
   },
 

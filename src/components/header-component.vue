@@ -11,13 +11,13 @@
       </div>
       <div class="header-menu_mobile">
         <transition name='open-menu'>
-          <ul class="header-menu_mobile_inner" v-if='menuOpened'>
+          <ul class="header-menu_mobile_inner" v-if='$parent.menuOpened'>
             <li><a href="#" @click.prevent='goToShema'>Як удзельнiчаць</a></li>
             <li><a href="#" @click.prevent='goToVote'>Галасаваць</a></li>
             <li><a href="#" @click.prevent='goToProductMobile'>Больш пра ЛIДСКАЕ® Radler</a></li>
           </ul>
         </transition>
-        <a href="#" class="open" v-if='!menuOpened' @click.prevent='openMenu'>Open</a>
+        <a href="#" class="open" v-if='!$parent.menuOpened' @click.prevent='openMenu'>Open</a>
         <a href="#" class="close" v-else @click.prevent='closeMenu'>Close</a>
       </div>
     </div>
@@ -29,7 +29,7 @@ export default {
   name: 'header-component',
   data () {
     return {
-      menuOpened: false
+
     }
   },
 
@@ -77,11 +77,11 @@ export default {
     },
 
     openMenu() {
-      this.menuOpened = true;
+      this.$parent.menuOpened = true;
     },
 
     closeMenu() {
-      this.menuOpened = false;
+      this.$parent.menuOpened = false;
     }
   }
 
