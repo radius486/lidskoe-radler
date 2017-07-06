@@ -8,7 +8,7 @@
         <form>
           <input id="name" type="text" placeholder="iмя">
           <input id="sname" type="text" placeholder="прозвiшча">
-          <input id="phone" type="phone" placeholder="+375 (29) ___ __ __"  v-mask="'+375(29)-###-##-##'"  v-model="myInputModel">
+          <input id="phone" type="phone" placeholder="+375 (29) ___ __ __"  v-mask="'+375 (##)-###-##-##'"  v-model="myInputModel">
           <input id="email" type="email" placeholder="e-mail:">
           <div class="bookBox">
             <input id="book" value="1" type="checkbox">
