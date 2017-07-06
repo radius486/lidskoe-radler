@@ -5,7 +5,6 @@
         <div class="socials">
           <a href="#" class="fb">Facebook</a>
           <a href="#" class="vk">Vkontakte</a>
-          <a href="#" class="inst">Instagram</a>
           <a href="#" class="tweet">Twitter</a>
         </div>
         <a href="#" class="vote" @click.prevent = '$parent.currentSlideNum = 2'>Галасаваць</a>

@@ -1,5 +1,5 @@
 <template>
-  <div class="view-2">
+  <div class="view-2" @click='closePopups'>
     <div class="view_content">
       <h2 class="view_title">аддай голас<br> за мiкс-вечарыну</h2>
       <h3 class="view_subtitle">і атрымай магчымасць выйграць квіткі</h3>
@@ -84,6 +84,19 @@
       viewItem,
       infoPopup,
       checkInPopup
+    },
+
+    methods: {
+      closePopups(e) {
+        if (e.target.className == 'view-2' || e.target.className == 'view_title' || e.target.className == 'view_subtitle' || e.target.className == 'view_content') {
+          this.showFactory = false;
+          this.showBeach = false;
+          this.showBattle = false;
+          this.checkInFactory = false;
+          this.checkInBeach = false;
+          this.checkInBattle = false;
+        }
+      }
     }
   }
 </script>

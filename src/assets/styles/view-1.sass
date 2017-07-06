@@ -8,24 +8,31 @@
 .socials
   display: flex
   justify-content: space-between
-  width: 180px
+  width: 150px
   margin-bottom: 4vh
-  margin-left: 22%
+  margin-left: 23.5%
 
   @media(max-width: 1366px)
-    margin-left: 15%
+    margin-left: 16%
 
   @media(max-width: 1024px)
-    margin-left: 7%
+    margin-left: 9%
+
   a
     width: 36px
     height: 36px
     font-size: 0
     display: block
     background: url('../assets/images/social-icons.png') no-repeat 0 center
+    transition: margin .2s ease-in, box-shadow .2s ease-in
+    border-radius: 50%
+
+    &:hover
+      margin-top: -5px
+      box-shadow: 4px 4px 7px rgba(0, 0, 0,  .3)
 
     &.fb
-      background-position: 0 center
+      background-position: 1px center
 
     &.vk
       background-position: -46px center
@@ -34,7 +41,7 @@
       background-position: -92px center
 
     &.tweet
-      background-position: -140px center
+      background-position: -138px center
 
 
 .rules

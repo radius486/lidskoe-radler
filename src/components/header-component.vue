@@ -5,9 +5,9 @@
         <a href="/" title="Галоўная"></a>
       </div>
       <div class="header-menu">
-        <a href="#" @click.prevent='prevSlide'>Галоўная</a>
-        <a href="#" @click.prevent='nextSlide'>Галасаваць</a>
-        <a href="#" @click.prevent='goToProduct'>Больш пра ЛIДСКАЕ® Radler</a>
+        <a href="#" @click.prevent='prevSlide' :class="{ active: $parent.currentSlideNum == 1 && !$parent.productPage}">Галоўная</a>
+        <a href="#" @click.prevent='nextSlide' :class="{ active: $parent.currentSlideNum == 2 && !$parent.productPage}">Галасаваць</a>
+        <a href="#" @click.prevent='goToProduct' :class="{ active: $parent.productPage}">Больш пра ЛIДСКАЕ® Radler</a>
       </div>
       <div class="header-menu_mobile">
         <transition name='open-menu'>

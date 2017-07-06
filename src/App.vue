@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div class="lemons" v-bind:class="{ animate: currentSlideNum == 2, 'is-visiable': !attention}"></div>
+  <div id="app" @mousemove='goParallax'>
+    <div class="lemons" v-bind:class="{ animate: currentSlideNum == 2, 'is-visiable': !attention}" :style='{marginLeft: parallaxPosition}'></div>
     <header-component></header-component>
     <attention-popup></attention-popup>
     <transition name="fade">
@@ -58,7 +58,8 @@ export default {
       shemaPage: false,
       homePage: true,
       votePage: false,
-      menuOpened: false
+      menuOpened: false,
+      parallaxPosition: 0
     }
   },
 
@@ -92,6 +93,11 @@ export default {
       } else {
         this.currentSlideNum = 1;
       }
+    },
+
+    goParallax(e) {
+      let position = - e.clientX/200 + 'px';
+      this.parallaxPosition = position;
     }
   }
 }
