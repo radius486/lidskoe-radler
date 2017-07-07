@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" id="header">
     <div class="header-inner">
       <div class="logo">
         <a href="http://lidskae.by" title="Лідскае піва"></a>

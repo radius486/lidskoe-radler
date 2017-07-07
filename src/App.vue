@@ -95,9 +95,11 @@ export default {
 
     scrollToMobile() {
       let height = window.innerHeight;
-      let coord = height * (this.currentMobileNum - 1);
+      let headerHeight = document.getElementById('header').offsetHeight;
+      let coord = height * (this.currentMobileNum - 1) - headerHeight;
       document.getElementById('app').scrollTop = coord;
-      console.log(coord);
+      //console.log(coord);
+      //console.log(headerHeight);
     }
   }
 }
