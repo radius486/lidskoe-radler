@@ -19,10 +19,10 @@
 
     methods: {
       goToVote() {
-        this.$parent.votePage = true;
-        this.$parent.shemaPage = false;
-        this.$parent.homePage = false;
+        this.$parent.firstPage = true;
         this.$parent.productMobile = false;
+        this.$parent.currentMobileNum = 3;
+        this.$parent.scrollToMobile();
       }
     }
   }
