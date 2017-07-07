@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-inner">
       <div class="logo">
-        <a href="/" title="Галоўная"></a>
+        <a href="http://lidskae.by" title="Лідскае піва"></a>
       </div>
       <div class="header-menu">
         <a href="#" @click.prevent='prevSlide' :class="{ active: $parent.currentSlideNum == 1 && !$parent.productPage}">Галоўная</a>

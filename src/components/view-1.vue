@@ -3,12 +3,12 @@
     <div class="view_content">
       <div class="view_info">
         <div class="socials">
-          <a href="#" class="fb">Facebook</a>
-          <a href="#" class="vk">Vkontakte</a>
-          <a href="#" class="tweet">Twitter</a>
+          <a href="#" class="fb" onclick="window.open('http://m.facebook.com/sharer.php?u=http://event.edenkit.com', 'sharer', 'toolbar=0,status=0,width=626,height=436,top=200,left=200');return false;">Facebook</a>
+          <a href="#" class="vk" onclick="window.open('http://vk.com/share.php?url=http://event.edenkit.com', 'sharer', 'toolbar=0,status=0,width=626,height=436,top=200,left=200');return false;">Vkontakte</a>
+          <a href="#" class="tweet" onclick="window.open('http://www.twitter.com/share?url=http://event.edenkit.com', 'sharer', 'toolbar=0,status=0,width=626,height=436,top=200,left=200');return false;">Twitter</a>
         </div>
         <a href="#" class="vote" @click.prevent = '$parent.currentSlideNum = 2'>Галасаваць</a>
-        <a class="rules" href="#">Поўныя правілы</a>
+        <a class="rules" target="_blank" href="rules.pdf">Поўныя правілы</a>
       </div>
     </div>
   </div>

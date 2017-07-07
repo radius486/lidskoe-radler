@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <transition name="slide-fade">
     <div class="info-popup">
       <button class="close" @click.prevent='closePopup'>Close</button>
       <div class="info-popup_left">

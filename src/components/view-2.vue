@@ -41,7 +41,7 @@
   }
 
   let client = new HttpClient();
-  client.get('http://event.edenkit.com/admin321/getstat.php', function(response) {
+  client.get('https://event.edenkit.com/admin321/getstat.php', function(response) {
     let arr_result = response.split(';');
     count1 = arr_result[0];
     count2 = arr_result[1];
