@@ -35,7 +35,7 @@
           <br><br>
 
           <div class="check-in-popup_actions">
-            <button @click.prevent='closePopup' style="position: absolute;left: 44%;">Акей</button>
+            <button @click.prevent='closePopup'>Акей</button>
           </div>
 
         </div>

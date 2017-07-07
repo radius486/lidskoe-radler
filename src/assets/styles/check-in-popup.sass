@@ -15,20 +15,22 @@
   max-height: 515px
 
   @media (max-width: 768px)
-    top: 12vh
+    top: initial
+    padding: 250px 30px 100px 30px
     left: 30px
     right: 30px
-    bottom: 9.5vh
+    bottom: 120px
     max-height: initial
     flex-direction: column
-    padding: 0 6vw 10vh
     justify-content: flex-start
 
   @media (max-width: 420px)
-    top: 12vh
+    top: initial
+    padding: 150px 10px 50px 10px
     left: 10px
     right: 10px
-    bottom: 6vh
+    bottom: 40px
+    min-height: 440px
 
   h2
     font-family: 'futurafuturiscbold'
@@ -40,11 +42,23 @@
     @media(min-height: 950px)
       font-size: 52px
 
+    @media (max-width: 768px)
+      font-size: 52px
+
+    @media (max-width: 420px)
+      font-size: 24px
+
   p
     font-family: 'futurafuturis'
     font-size: 2.7vh
     margin: 0
     color: #fff
+
+    @media (max-width: 420px)
+      font-size: 26px
+
+    @media (max-width: 420px)
+      font-size: 12px
 
     @media(min-height: 950px)
       font-size: 26px
@@ -68,11 +82,19 @@
       height: 50px
 
     @media (max-width: 768px)
+      font-size: 21px
       max-width: 100%
       width: 100%
+      height: 50px
+      margin-top: 20px
 
     &:focus
       outline: none
+
+    @media (max-width: 420px)
+      font-size: 12px
+      height: 30px
+      margin-top: 10px
 
 
 .bookBox
@@ -106,8 +128,13 @@
     @media(min-height: 950px)
       font-size: 17px
 
+
+    @media (max-width: 768px)
+      font-size: 17px
+
+
     @media(max-width: 420px)
-      font-size: 2.5vh
+      font-size: 12px
 
     &:before
       content: ''
@@ -128,7 +155,6 @@
   @media (max-width: 768px)
     width: 100%
     align-items: center
-    order: 2
 
 
 .check-in-popup_right
@@ -140,9 +166,6 @@
   align-items: center
   box-sizing: border-box
 
-  @media (max-width: 768px)
-    width: 100%
-    order: 1
 
 .image
   width: 36vh
@@ -169,10 +192,14 @@
     background-size: contain
 
   @media (max-width: 768px)
-    width: 24vh
+    padding-left: 15%
+    width: 30%
+    position: absolute
+    top: 20px
 
   @media (max-width: 420px)
-    width: 20vh
+    width: 35%
+    top: 10px
 
 
 .check-in-popup_actions
@@ -182,10 +209,13 @@
 
   @media (max-width: 768px)
     position: absolute
-    bottom: 3vh
+    bottom: 30px
     left: 0
     right: 0
     justify-content: center
+
+  @media (max-width: 420px)
+    bottom: 20px
 
   button
     border: 4px solid #fff
@@ -201,14 +231,20 @@
     @media(min-height: 950px)
       font-size: 24px
 
+    @media (max-width: 768px)
+      font-size: 24px
+
     @media (max-width: 420px)
       font-size: 12px
       padding: 2px 10px
       border-radius: 5px
       border-width: 2px
 
+    &:last-child
+      margin-left: 20px
+
     &:first-child
-      margin-right: 20px
+      margin-left: 0
 
     &:focus
       outline: none
@@ -226,6 +262,7 @@
   background-color: transparent
   background: url('../assets/images/close.png') no-repeat center
   cursor: pointer
+  z-index: 4
 
   &:focus
     outline: none
@@ -237,10 +274,10 @@
   opacity: 0
 
 
-.slide-fade-enter-active 
+.slide-fade-enter-active
   transition: all .3s ease
 
-.slide-fade-leave-active 
+.slide-fade-leave-active
   transition: all .2s ease
 
 .slide-fade-enter, .slide-fade-leave-to
