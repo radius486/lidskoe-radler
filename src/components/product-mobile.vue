@@ -33,12 +33,16 @@
       nextSlide() {
         if (this.currentSlideNum == 1) {
           this.currentSlideNum++;
+        } else {
+          this.currentSlideNum--;
         }
       },
 
       prevSlide() {
         if (this.currentSlideNum == 2) {
           this.currentSlideNum--;
+        } else {
+          this.currentSlideNum++;
         }
       }
     }
