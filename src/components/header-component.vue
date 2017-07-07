@@ -12,9 +12,9 @@
       <div class="header-menu_mobile">
         <transition name='open-menu'>
           <ul class="header-menu_mobile_inner" v-if='$parent.menuOpened'>
-            <li><a href="#" @click.prevent='goToShema'>Як удзельнiчаць</a></li>
-            <li><a href="#" @click.prevent='goToVote'>Галасаваць</a></li>
-            <li><a href="#" @click.prevent='goToProductMobile'>Больш пра ЛIДСКАЕ® Radler</a></li>
+            <li :class="{ active: $parent.currentMobileNum == 2 && !$parent.productMobile}"><a href="#" @click.prevent='goToShema'>Як удзельнiчаць</a></li>
+            <li :class="{ active: $parent.currentMobileNum == 3 && !$parent.productMobile}"><a href="#" @click.prevent='goToVote'>Галасаваць</a></li>
+            <li :class="{ active: $parent.productMobile}"><a href="#" @click.prevent='goToProductMobile'>Больш пра ЛIДСКАЕ® Radler</a></li>
           </ul>
         </transition>
         <a href="#" class="open" v-if='!$parent.menuOpened' @click.prevent='openMenu'>Open</a>
