@@ -8,7 +8,7 @@
         <form>
           <input @click.prevent='upd_input("name")' id="name" type="text" placeholder="iмя">
           <input @click.prevent='upd_input("sname")' id="sname" type="text" placeholder="прозвiшча">
-          <input @click.prevent='upd_input("phone")' id="phone" type="phone" placeholder="+375 (29) ___ __ __"  v-mask="'+375 (##) ###-##-##'"  v-model="myInputModel">
+          <input @click.prevent='upd_input("phone")' id="phone" type="phone" placeholder="+375 (29) ___ __ __"  v-mask="'+### (##) ##-##-##'"  v-model="myInputModel">
           <input @click.prevent='upd_input("email")' id="email" type="email" placeholder="e-mail:">
           <div class="bookBox">
             <input id="book" value="1" type="checkbox" checked>
