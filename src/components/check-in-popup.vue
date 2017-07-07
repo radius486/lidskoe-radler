@@ -8,7 +8,17 @@
         <form>
           <input @click.prevent='upd_input("name")' id="name" type="text" placeholder="iмя">
           <input @click.prevent='upd_input("sname")' id="sname" type="text" placeholder="прозвiшча">
-          <masked-input @click.prevent='upd_input("phone")' id="phone" type="phone" placeholder="+375 (29) ___ __ __"  mask="\+375\ (11) 111-11-11"  v-model="myInputModel"/>
+          <masked-input
+            @click.prevent='upd_input("phone")'
+            name="phone"
+            id="phone"
+            type="phone"
+            placeholder="+375 (29) ___ __ __"
+            v-model="phone"
+            keepCharPositions=true
+            :mask="['+', '3', '7', '5', '(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/]"
+            placeholderChar="#">
+          </masked-input>
           <input @click.prevent='upd_input("email")' id="email" type="email" placeholder="e-mail:">
           <div class="bookBox">
             <input id="book" value="1" type="checkbox" checked>
@@ -45,21 +55,19 @@
 </template>
 
 <script>
-import MaskedInput from 'vue-masked-input';
+import Vue     from 'vue';
+import MaskedInput from 'vue-text-mask';
+
+Vue.component('masked-input', MaskedInput);
 
 export default {
   name: 'check-in-popup',
 
   props: ['className'],
 
-  components: {
-    MaskedInput
-  },
-
   data () {
     return {
-      myInputModel: null,
-      date: null
+      phone: null
     }
   },
 
