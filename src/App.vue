@@ -96,7 +96,7 @@ export default {
     scrollToMobile() {
       let height = window.innerHeight;
       let headerHeight = document.getElementById('header').offsetHeight;
-      let coord = height * (this.currentMobileNum - 1) - headerHeight;
+      let coord = height * (this.currentMobileNum - 1);
       document.getElementById('app').scrollTop = coord;
       //console.log(coord);
       //console.log(headerHeight);
