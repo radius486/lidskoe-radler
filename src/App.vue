@@ -1,6 +1,6 @@
 <template>
-  <div id="app" @mousemove='goParallax'>
-    <div class="lemons" v-bind:class="{ animate: currentSlideNum == 2, 'is-visiable': !attention}" :style='{marginLeft: parallaxPosition}'></div>
+  <div id="app" @mousemove='goParallax' :class="{ 'mobile-scrolling': !attention && !productMobile}">
+    <div class="lemons" :class="{ animate: currentSlideNum == 2, 'is-visiable': !attention}" :style='{marginLeft: parallaxPosition}'></div>
     <header-component></header-component>
     <attention-popup></attention-popup>
     <transition name="fade">
@@ -15,17 +15,11 @@
     </transition>
 
     <div class="mobile-layout" @click='menuOpened = false'>
-      <transition name="fade">
-        <home v-if='homePage && !attention'></home>
-      </transition>
-
-      <transition name="fade">
-        <shema v-if='shemaPage'></shema>
-      </transition>
-
-      <transition name="fade">
-        <vote v-if='votePage'></vote>
-      </transition>
+      <div class="first-page" v-if='firstPage && !attention'>
+        <home></home>
+        <shema></shema>
+        <vote></vote>
+      </div>
 
       <transition name="fade">
         <product-mobile v-if='productMobile'></product-mobile>
@@ -53,11 +47,10 @@ export default {
     return {
       attention: true,
       currentSlideNum: 1,
+      currentMobileNum: 1,
       productPage: false,
       productMobile: false,
-      shemaPage: false,
-      homePage: true,
-      votePage: false,
+      firstPage: true,
       menuOpened: false,
       parallaxPosition: 0
     }
@@ -79,7 +72,7 @@ export default {
   computed: {
     offset() {
       let height = window.innerHeight;
-      return '-' + height * (this.currentSlideNum - 1)  + 'px'
+      return '-' + height * (this.currentSlideNum - 1)  + 'px';
     }
   },
 
@@ -98,6 +91,13 @@ export default {
     goParallax(e) {
       let position = - e.clientX/200 + 'px';
       this.parallaxPosition = position;
+    },
+
+    scrollToMobile() {
+      let height = window.innerHeight;
+      let coord = height * (this.currentMobileNum - 1);
+      document.getElementById('app').scrollTop = coord;
+      console.log(coord);
     }
   }
 }

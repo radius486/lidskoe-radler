@@ -54,26 +54,26 @@ export default {
 
     goToShema() {
       this.closeMenu();
-      this.$parent.shemaPage = true;
-      this.$parent.homePage = false;
+      this.$parent.firstPage = true;
       this.$parent.productMobile = false;
-      this.$parent.votePage = false;
+      this.$parent.currentMobileNum = 2;
+      this.$parent.scrollToMobile();
     },
 
     goToVote() {
       this.closeMenu();
-      this.$parent.votePage = true;
-      this.$parent.shemaPage = false;
-      this.$parent.homePage = false;
+      this.$parent.firstPage = true;
       this.$parent.productMobile = false;
+      this.$parent.currentMobileNum = 3;
+      this.$parent.scrollToMobile();
     },
 
     goToProductMobile() {
       this.closeMenu();
-      this.$parent.homePage = false;
-      this.$parent.shemaPage = false;
+      this.$parent.firstPage = false;
       this.$parent.productMobile = true;
-      this.$parent.votePage = false;
+      this.$parent.currentMobileNum = 1;
+      this.$parent.scrollToMobile();
     },
 
     openMenu() {
