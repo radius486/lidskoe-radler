@@ -13,7 +13,7 @@
             name="phone"
             id="phone"
             type="phone"
-            placeholder="+375 (29) ___ __ __"
+            placeholder="+375 (__) ___ __ __"
             v-model="phone"
             keepCharPositions=true
             :mask="['+', '3', '7', '5', '(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/]"
